@@ -10,7 +10,7 @@ def kontrollera_losenord(losenord):
 
 #Kontroll 1: Nu kontrollerar jag om lösenordet är längre än 12 tecken, om det är kortare än 12, är det svagt lösenord:
     if len(losenord) < 12:
-        print ("FEL: ditt lösenordet är kortare än 12 tecken.")
+        print ("FEL: ditt lösenord är kortare än 12 tecken.")
         starkt= False
 
 # Nu gör jag kontroll 2: om det finns stor bokstav i lösenordet. islower är TRUE om alla bokstäver är små, då betyder det att det finns ingen stor bokstav.
@@ -24,10 +24,15 @@ def kontrollera_losenord(losenord):
          print ("FEL: ditt lösenord innehåller ingen siffra.")
          starkt= False
 
+# Kontroll 4: Kontrollerar om det finns en specialtecken eller ej. Jag använder isalnum() som returnerar TRUE om lösenordet innehåller bara tecken och siffror, inga speciellatecken.
+    if losenord.isalnum():
+         print ("FEL: ditt lösenord innehåller inga specialtecken.")
+         starkt= False
+
+#Här returnerar funktionen resultatet (true= starkt lösenord, false= svagt lösenord)
     return starkt
 
-
-#Skriver rubriken
+#Skriver rubriken till scriptet
 print ("Kontroll av ditt lösenord:")
 
 # Läser in lösenord från användaren,  getpass gör att texten inte syns när man skriver
