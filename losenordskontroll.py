@@ -50,3 +50,27 @@ if starkt:
 else: # Om Starkt är FALSE, kontrollen mislyckades och lösenordet är svag.
 	print ("Lösenordet är SVAGT, du borde ändra det.")
 
+#Branch 1 Generera en ny godkänt lösenord:
+
+#Jag importerar random, för att kunna välja slumpmässiga tecken
+import random
+
+# jag importerar string, som innehåller färdiga grupper av tecken, tx. bokstäver, siffor och speciella tecken.
+import string
+
+#Skapar en funktion som genererar ett slumpmässigt lösenord
+
+def generera_slumpassigt_losenord():
+     
+     #Här bestämmer jag vilka tecken som kan användas i lösenordet: ascii_letters (små+stora bokstäver) + digits (0-9) + punctuation (speciellatecken)
+     tillatna_tecken=string.ascii_letters + string.digits + string.punctuation
+
+     # Här bestämmer jag hur långt lösenordet ska vara
+     losenord_langd = 12
+
+     # Vi börjar med ett tomt lösenord utan text
+
+     nytt_losenord = ""
+
+     
+
