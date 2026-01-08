@@ -51,13 +51,13 @@ def generera_slumpmassigt_losenord():
      tillatna_tecken=string.ascii_letters + string.digits + string.punctuation
 
      # Här bestämmer jag hur långt lösenordet ska vara
-     losenord_langd = 12
+     losenord_langd = 14
 
      # Vi börjar med ett tomt lösenord utan text
 
      nytt_losenord = ""
 
-     # Nu gör jag en loop som körs en gång per tecken (12 varv)
+     # Nu gör jag en loop som körs en gång per tecken (14 varv)
      for i in range(losenord_langd):
           
           slump_tecken= random.choice(tillatna_tecken) #Här väljer ett slumpmässigt tecken från de tillåtna tecken
@@ -69,10 +69,11 @@ def generera_slumpmassigt_losenord():
 
      return nytt_losenord
 
+
 #3 MAIN/PROGRAMFLÖDE
 
 #Skriver rubriken till scriptet
-print ("Kontroll av ditt lösenord:")
+print ("Nu kontrolleras ditt lösenord:")
 
 # Läser in lösenord från användaren,  getpass gör att texten inte syns när man skriver
 losenord = getpass.getpass("Skriv ditt lösenord (det visas inte på skärmen): ")
@@ -93,11 +94,6 @@ else: # Om Starkt är FALSE, kontrollen mislyckades och lösenordet är svag.
 if not starkt:
      print ("Här är ditt förslag på ett godkänt och starkare lösenord som fyller alla krav:")
      print (generera_slumpmassigt_losenord())
-
-
-
-
-#Branch 1 Generera en ny godkänt lösenord:
 
 
 
