@@ -1,6 +1,17 @@
 
+#1 IMPORTS
+
 # Importerar biblioteket getpass, för att läsa in lösenord utan att visa det i terminalen
 import getpass
+
+#Jag importerar random, för att kunna välja slumpmässiga tecken
+import random
+
+# jag importerar string, som innehåller färdiga grupper av tecken, tx. bokstäver, siffor och speciella tecken.
+import string
+
+
+#2 FUNKTIONER
 
 #Funktion för att kontrollera lösenord: tar emot lösenord och kontrollerar säkerhetskraven
 def kontrollera_losenord(losenord):
@@ -32,35 +43,9 @@ def kontrollera_losenord(losenord):
 #Här returnerar funktionen resultatet (true= starkt lösenord, false= svagt lösenord)
     return starkt
 
-#Skriver rubriken till scriptet
-print ("Kontroll av ditt lösenord:")
-
-# Läser in lösenord från användaren,  getpass gör att texten inte syns när man skriver
-losenord = getpass.getpass("Skriv ditt lösenord (det visas inte på skärmen): ")
-
-#Anropar funktionen som kontrollerar lösenordet, resultatet (true eller false) sparas i variabeln starkt
-starkt = kontrollera_losenord(losenord)
-
-#Skriver ut rubrik för resultaten:
-print ("Resultat: ")
-
-#Om starkt är TRUE, kontrollerna klarades
-if starkt:
-        print ("Lösenordet är Godkänt!! Grattis! Ditt lösenord uppfyller alla krav.")
-else: # Om Starkt är FALSE, kontrollen mislyckades och lösenordet är svag.
-	print ("Lösenordet är SVAGT, du borde ändra det.")
-
-#Branch 1 Generera en ny godkänt lösenord:
-
-#Jag importerar random, för att kunna välja slumpmässiga tecken
-import random
-
-# jag importerar string, som innehåller färdiga grupper av tecken, tx. bokstäver, siffor och speciella tecken.
-import string
-
 #Skapar en funktion som genererar ett slumpmässigt lösenord
 
-def generera_slumpassigt_losenord():
+def generera_slumpmassigt_losenord():
      
      #Här bestämmer jag vilka tecken som kan användas i lösenordet: ascii_letters (små+stora bokstäver) + digits (0-9) + punctuation (speciellatecken)
      tillatna_tecken=string.ascii_letters + string.digits + string.punctuation
@@ -83,6 +68,39 @@ def generera_slumpassigt_losenord():
     #När hela loopen är klar, returnerars det lösenordet
 
      return nytt_losenord
+
+#3 MAIN/PROGRAMFLÖDE
+
+#Skriver rubriken till scriptet
+print ("Kontroll av ditt lösenord:")
+
+# Läser in lösenord från användaren,  getpass gör att texten inte syns när man skriver
+losenord = getpass.getpass("Skriv ditt lösenord (det visas inte på skärmen): ")
+
+#Anropar funktionen som kontrollerar lösenordet, resultatet (true eller false) sparas i variabeln starkt
+starkt = kontrollera_losenord(losenord)
+
+#Skriver ut rubrik för resultaten:
+print ("Resultat: ")
+
+#Om starkt är TRUE, kontrollerna klarades
+if starkt:
+        print ("Lösenordet är Godkänt!! Grattis! Ditt lösenord uppfyller alla krav.")
+else: # Om Starkt är FALSE, kontrollen mislyckades och lösenordet är svag.
+	print ("Lösenordet är SVAGT, du borde ändra det.")
+
+# Branch 1: föreslå nytt lösenord
+if not starkt:
+     print ("Här är ditt förslag på ett godkänt och starkare lösenord som fyller alla krav:")
+     print (generera_slumpmassigt_losenord())
+
+
+
+
+#Branch 1 Generera en ny godkänt lösenord:
+
+
+
 
 
 
