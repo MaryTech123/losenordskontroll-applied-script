@@ -72,5 +72,18 @@ def generera_slumpassigt_losenord():
 
      nytt_losenord = ""
 
-     
+     # Nu gör jag en loop som körs en gång per tecken (12 varv)
+     for i in range(losenord_langd):
+          
+          slump_tecken= random.choice(tillatna_tecken) #Här väljer ett slumpmässigt tecken från de tillåtna tecken
+
+          nytt_losenord= nytt_losenord + slump_tecken # Här lägger jag till teckenet sist i lösenordet
+
+    
+    #När hela loopen är klar, returnerars det lösenordet
+
+     return nytt_losenord
+
+
+
 
