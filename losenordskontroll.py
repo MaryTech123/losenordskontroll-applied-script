@@ -69,6 +69,22 @@ def generera_slumpmassigt_losenord():
 
      return nytt_losenord
 
+#Branch 2: Kontrollerar om lösenordet finns i rockyou.txt
+def finns_i_rockyou(losenord):
+     
+     #Öppnar rockyou.txt från Kali-wordlist-mappen
+     fil = open("/usr/share/wordlists/rockyou.txt", errors="ignore") #skriver errors=ignore då annars krascher programmet pga.olika konstiga tecken.
+
+     #läser filen rad för rad
+     for rad in fil:
+          #strip() tar bort radbrytning 
+          if rad.strip() == losenord:
+               #Om lösenordet skulle hittas i listan, filen stängs och returneras True
+               fil.close()
+               return True
+     fil.close()
+     return False
+     
 
 #3 MAIN/PROGRAMFLÖDE
 
@@ -90,9 +106,15 @@ if starkt:
 else: # Om Starkt är FALSE, kontrollen mislyckades och lösenordet är svag.
 	print ("Lösenordet är SVAGT, du borde ändra det.")
 
+#Branch 2: 
+if finns_i_rockyou(losenord):
+     print("VARNING: Ditt lösenord finns i rockyou.txt filen! Ditt lösenord är mycket osäkert!")
+     starkt= False #Detta markerar lösenord som svag, så att nytt lösenord föreslås
+
+
 # Branch 1: föreslå nytt lösenord
 if not starkt:
-     print ("Här är ditt förslag på ett godkänt och starkare lösenord som fyller alla krav:")
+     print ("Här är ditt förslag på ett godkänt och starkare lösenord som fyller alla krav och inte finns i rockyou filen:")
      print (generera_slumpmassigt_losenord())
 
 
