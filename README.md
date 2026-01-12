@@ -1,4 +1,4 @@
-
+## Tom was here !
 # Applied Script projekt
 ## Lösenordskontroll
 Detta projekt kontrollerar ifall den angivna lösenord är säkert eller osäkert enligt olika säkerhetskrav. För att ha en godkänt och starkt lösenord måste det innehålla:
