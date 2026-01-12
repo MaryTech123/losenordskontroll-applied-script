@@ -6,7 +6,7 @@ Detta projekt kontrollerar ifall den angivna lösenord är säkert eller osäker
 * Minst en stor bokstav
 * Minst en siffra
 * Minst en specialtecken
-* Inte bara inkluderat i rockyou filen
+* Inte vara inkluderat i rockyou filen
 
 Om inte dessa kravs uppfylls, kommer scriptet visa ett _felmeddelandet_ och generera en *nytt starkt lösenord* som uppfyller alla krav.
 
@@ -24,7 +24,7 @@ Scriptet kontrollerar om lösenordet uppfyller följande krav:
 * Minst en stor bokstav
 * Minst en siffra
 * Minst en specialtecken
-* Inte bara inkluderat i rockyou filen
+* Inte vara inkluderat i rockyou filen
 #### Branch 1: Generera ny lösenord
 
 Om användarens lösenord är svag, skapar scripten en ny lösenord som uppfyller alla krav.
@@ -54,7 +54,7 @@ python3 losenordskontroll.py
 3. Följ instruktioner i terminalen
 
 ### Flödesschema
-!(https://miro.com/app/board/uXjVGUcOtbc=/)
+https://miro.com/app/board/uXjVGUcOtbc=/
 
 
 
